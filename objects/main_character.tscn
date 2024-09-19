@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://db4dlin7432wv"]
+
+[ext_resource type="Texture2D" uid="uid://b1j6j2qmlxyb1" path="res://assets/learning-project-assets/character-spritesheet.png" id="1_sihgr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7faw2"]
+size = Vector2(76, 103)
+
+[node name="Main Character" type="CharacterBody2D"]
+
+[node name="Character-spritesheet" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+texture = ExtResource("1_sihgr")
+hframes = 4
+vframes = 4
+frame = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 8.5)
+shape = SubResource("RectangleShape2D_7faw2")

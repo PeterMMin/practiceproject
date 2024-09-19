@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://c61ci815bw7f3"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_u73jj"]
+[ext_resource type="PackedScene" uid="uid://pwmstvnhwruw" path="res://objects/level_1.tscn" id="2_f2urp"]
+[ext_resource type="PackedScene" uid="uid://db4dlin7432wv" path="res://objects/main_character.tscn" id="3_omy20"]
+[ext_resource type="Script" path="res://main_character.gd" id="4_4wk3h"]
+[ext_resource type="Script" path="res://objects/Label.gd" id="5_jew8g"]
+[ext_resource type="PackedScene" uid="uid://7tqngwxccsnf" path="res://objects/star.tscn" id="5_l8da2"]
+
+[node name="Main Scene" type="Node2D"]
+script = ExtResource("1_u73jj")
+
+[node name="Level 1" parent="." instance=ExtResource("2_f2urp")]
+
+[node name="Main Character" parent="." instance=ExtResource("3_omy20")]
+position = Vector2(42, -13)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("4_4wk3h")
+
+[node name="Camera2D" type="Camera2D" parent="Main Character"]
+position = Vector2(4, 0)
+scale = Vector2(2, 2)
+limit_left = 0
+limit_top = -100
+
+[node name="Control" type="Control" parent="Main Character/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Main Character/Camera2D/Control"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -53.0
+offset_right = 17.0
+offset_bottom = -30.0
+text = "hello"
+script = ExtResource("5_jew8g")
+
+[node name="Star" parent="." instance=ExtResource("5_l8da2")]
+position = Vector2(133, -9)
+
+[node name="Star2" parent="." instance=ExtResource("5_l8da2")]
+position = Vector2(217, -42)
+
+[node name="Star3" parent="." instance=ExtResource("5_l8da2")]
+position = Vector2(422, -18)
